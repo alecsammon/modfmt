@@ -24,6 +24,12 @@ In your Go project root, run:
 modfmt --in-place
 ```
 
+You can also use the `--check` flag to check if the `go.mod` file is already formatted. This command will exit with a 
+non-zero status code if the file needs formatting.
+```sh
+modfmt --check
+```
+
 ## Limitations
 
 I hacked this tool together using the official parser in less than 2 hours and unsurprisingly there are a few drawbacks with this:
