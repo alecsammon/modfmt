@@ -31,19 +31,13 @@ func run() error {
 
 	flag.Parse()
 
-	if inplace && check {
-		return fmt.Errorf("cannot use both --in-place and --check flags simultaneously")
-	}
-
-	// check if we want to replace the contents of go.mod
-	if inplace {
-		return updateInplace(gomodName, updatedContents)
-	}
-
 	if check {
 		return checkContents(gomodName, updatedContents)
 	}
 
+	if inplace {
+		return updateInplace(gomodName, updatedContents)
+	}
 	fmt.Println(string(updatedContents))
 	return nil
 }
