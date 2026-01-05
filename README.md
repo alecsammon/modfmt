@@ -24,8 +24,8 @@ In your Go project root, run:
 modfmt --in-place
 ```
 
-You can also use the `--check` flag to check if the `go.mod` file is already formatted. This command will exit with a 
-non-zero status code if the file needs formatting.
+The `--check` command will override other flags, and will instead return a non-zero exit code if the `go.mod` file is
+not formatted, or zero if it is already formatted. This is useful for validating `go.mod` files in CI pipelines.
 ```sh
 modfmt --check
 ```
